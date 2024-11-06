@@ -8,19 +8,20 @@
   left: 0;
   height: 100vh;
   padding-top: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 6px 0 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 /* Logo Styling */
 .logo-container {
   text-align: center;
-  margin-bottom: 20px; /* Slightly reduced space between logo and menu */
+  margin-bottom: 70px; 
 }
 
 .logo {
   width: 180px;  /* Adjust the width as needed */
   height: auto;
+  margin-top: 20px;
 }
 
 /* Sidebar Title */

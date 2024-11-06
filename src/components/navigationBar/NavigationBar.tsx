@@ -12,12 +12,10 @@ const NavigationBar = () => {
       <div className="logo-container">
         <img src={logo} alt="Logo" className="logo" />
       </div>
-      
-      <h2 className="sidebar-title">Dashboard</h2>
       <ul>
         <li>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
-            <FaHome /> Homepage
+            <FaHome /> Dashboard
           </Link>
         </li>
         <li>

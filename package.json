@@ -8,9 +8,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "clean": "rimraf node_modules dist && npm cache clean --force"
+    "clean": "rimraf node_modules dist && npm cache clean --force",
+    "clean-install-build": "npm run clean && npm install && npm run build && npm run dev"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "font-awesome": "^4.7.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

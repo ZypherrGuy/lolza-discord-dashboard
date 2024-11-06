@@ -1,9 +1,16 @@
+import { useFetchUsers } from '../../hooks/useFetchUsers';
+import Table from '../../components/table/Table';
+
 const UsersPage = () => {
+  const { columns, data, loading, error } = useFetchUsers();
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
-    <div className="container">
+    <div className="content-container">
       <h3>Users</h3>
-      <p>List of users and related information goes here.</p>
-      {/* Add user content, tables, etc. */}
+      <Table columns={columns} data={data} />
     </div>
   );
 };
