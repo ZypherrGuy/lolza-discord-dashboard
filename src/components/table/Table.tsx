@@ -1,6 +1,5 @@
-// src/components/Table.tsx
-
 import React, { useState } from 'react';
+import './Table.css';
 
 interface Column {
   key: string;
