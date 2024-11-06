@@ -13,6 +13,7 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ columns, data }) => {
   const [sortConfig, setSortConfig] = useState<{ key: string; direction: 'asc' | 'desc' } | null>(null);
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   const sortedData = React.useMemo(() => {
     if (sortConfig !== null) {
@@ -34,11 +35,21 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
   };
 
   return (
-    <div>
-      <table>
+    <>
+    <div className="table-container">
+      <div className="table-ribbon">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="table-search-input"
+        />
+      </div>
+      <table className="table">
         <thead>
           <tr>
-            {columns.map((column) => (
+          {columns.map((column) => (
               <th key={column.key} onClick={() => requestSort(column.key)}>
                 {column.label} {sortConfig?.key === column.key ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
               </th>
@@ -48,14 +59,15 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
         <tbody>
           {sortedData.map((row, index) => (
             <tr key={index}>
-              {columns.map((column) => (
+              {columns.map(column => (
                 <td key={column.key}>{row[column.key]}</td>
               ))}
             </tr>
           ))}
         </tbody>
-      </table>
+        </table>
     </div>
+    </>
   );
 };
 
