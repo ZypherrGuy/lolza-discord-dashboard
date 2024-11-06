@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './NavigationBar.css';
 import logo from '../../assets/logo/LOGO-DISCDASH-TITLE-WHITE-FULL.png'; 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const DiscordBotsPage = () => {
   return (
     <div className="container">
