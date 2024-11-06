@@ -24,7 +24,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
       });
     }
     return data;
-  }, [data, sortConfig]);
+  }, [data, sortConfig, searchTerm]);
 
   const requestSort = (key: string) => {
     let direction: 'asc' | 'desc' = 'asc';
