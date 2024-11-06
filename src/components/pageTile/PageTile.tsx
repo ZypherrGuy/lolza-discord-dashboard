@@ -8,7 +8,7 @@ interface TournamentTileProps {
   onClick: () => void;
 }
 
-const TournamentTile: React.FC<TournamentTileProps> = ({ logo, name, info, onClick }) => {
+const TournamentTile: React.FC<TournamentTileProps> = ({ logo, name, onClick }) => {
   return (
     <div className="tournament-tile" onClick={onClick}>
       <img src={logo} alt={name} className="tournament-logo" />
