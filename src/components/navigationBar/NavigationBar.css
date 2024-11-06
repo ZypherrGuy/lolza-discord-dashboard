@@ -1,0 +1,78 @@
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background-color: #0c101a;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Logo Styling */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px; /* Slightly reduced space between logo and menu */
+}
+
+.logo {
+  width: 180px;  /* Adjust the width as needed */
+  height: auto;
+}
+
+/* Sidebar Title */
+.sidebar-title {
+  text-align: center;
+  margin-bottom: 30px; /* Adjusted for better spacing */
+  font-size: 22px; /* Reduced size for better balance */
+  color: #ecf0f1;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  font-size: 16px; /* Reduced font size */
+}
+
+/* Sidebar Links */
+.sidebar ul li a {
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  font-size: 16px; /* Reduced font size */
+  transition: all 0.3s ease;
+  padding: 10px 0px 10px 25px;
+}
+
+/* Add some space between the icon and text */
+.sidebar ul li a svg {
+  margin-right: 10px;
+}
+
+/* Hover Effects */
+.sidebar ul li a:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Active Link Styling */
+.sidebar ul li a.active {
+  background-color: #fe015c;
+  color: white;
+  padding-left: 40px;
+}
+
+/* Sidebar link icons styling */
+.sidebar ul li a svg {
+  font-size: 20px; /* Icon size */
+}
