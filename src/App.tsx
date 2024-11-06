@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './app.css';
+import './App.css';
 
 // Import pages (we'll create these components in the next steps)
 import Homepage from './pages/homepage/Homepage';
