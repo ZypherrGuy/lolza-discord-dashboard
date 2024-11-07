@@ -36,21 +36,23 @@ const TournamentsPage = () => {
         <Loader />
       ) : (
         <div className="content-container tournaments-grid">
-          {tournaments.map((tournament) => (
-            <TournamentTile
-              key={tournament.id}
-              logo={DefaultLogo}
-              name={tournament.name}
-              info={tournament.info}
-              onClick={() => openModal(tournament)}
-            />
-          ))}
+          {tournaments.map((tournament) => {
+            return (
+              <TournamentTile
+                key={tournament.id}
+                logo={DefaultLogo}
+                name={tournament.title}
+                info={tournament.info}
+                onClick={() => openModal(tournament)}
+              />
+            );
+          })}
         </div>
       )}
 
       {error && <p className="error-message">Error: {error}</p>}
 
-      <OverlayModal isOpen={isModalOpen} onClose={closeModal} heading={selectedTournament?.name || ''} children={undefined}>
+      <OverlayModal isOpen={isModalOpen} onClose={closeModal} heading={selectedTournament?.title || ''} children={undefined}>
         {/* Modal content */}
       </OverlayModal>
     </>
