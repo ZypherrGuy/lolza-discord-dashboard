@@ -4,7 +4,7 @@ import './PageTile.css';
 interface TournamentTileProps {
   logo: string;
   name: string;
-  info: string; // Additional info, like tournament status
+  info: string; 
   onClick: () => void;
 }
 
