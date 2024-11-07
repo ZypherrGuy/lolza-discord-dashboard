@@ -4,28 +4,15 @@ import TournamentTile from '../../components/pageTile/PageTile';
 import OverlayModal from '../../components/overlayModal/OverlayModal';
 import Button from '../../components/button/Button';
 import DefaultLogo from '../../assets/CMS/Tournaments/Tiles/sal.png';
+import Loader from '../../components/loader/Loader';
+import { useFetchTournaments, Tournament } from '../../hooks/useFetchTournaments';
 
-interface Tournament {
-  id: number;
-  name: string;
-  logo: string;
-  info: string;
-}
-
-const tournamentsData: Tournament[] = [
-  { id: 1, name: 'SSA League', logo: DefaultLogo, info: 'Ongoing' },
-  { id: 2, name: 'Winter Clash', logo: DefaultLogo, info: 'Upcoming' },
-  { id: 2, name: 'Winter Clash', logo: DefaultLogo, info: 'Upcoming' },
-  { id: 2, name: 'Winter Clash', logo: DefaultLogo, info: 'Upcoming' },
-  { id: 2, name: 'Winter Clash', logo: DefaultLogo, info: 'Upcoming' },
-  { id: 2, name: 'Winter Clash', logo: DefaultLogo, info: 'Upcoming' },
-  { id: 2, name: 'Winter Clash', logo: DefaultLogo, info: 'Upcoming' },
-  // Add more tournaments here
-];
 
 const TournamentsPage = () => {
+  const { tournaments, loading, error } = useFetchTournaments();
   const [selectedTournament, setSelectedTournament] = useState<Tournament | null>(null);
   const [isModalOpen, setModalOpen] = useState(false);
+  
 
   const openModal = (tournament: Tournament) => {
     setSelectedTournament(tournament);
@@ -45,17 +32,23 @@ const TournamentsPage = () => {
         <Button onClick={() => console.log("Create Tournament")} label="Create Tournament" variant="primary" />
       </div>
       
-      <div className="content-container tournaments-grid">
-        {tournamentsData.map((tournament) => (
-          <TournamentTile
-            key={tournament.id}
-            logo={tournament.logo}
-            name={tournament.name}
-            info={tournament.info}
-            onClick={() => openModal(tournament)}
-          />
-        ))}
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="content-container tournaments-grid">
+          {tournaments.map((tournament) => (
+            <TournamentTile
+              key={tournament.id}
+              logo={DefaultLogo}
+              name={tournament.name}
+              info={tournament.info}
+              onClick={() => openModal(tournament)}
+            />
+          ))}
+        </div>
+      )}
+
+      {error && <p className="error-message">Error: {error}</p>}
 
       <OverlayModal isOpen={isModalOpen} onClose={closeModal} heading={selectedTournament?.name || ''} children={undefined}>
         {/* Modal content */}

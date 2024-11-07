@@ -5,3 +5,9 @@ export const fetchUsersWithColumns = async () => {
   if (!response.ok) throw new Error('Failed to fetch users');
   return response.json();
 };
+
+export const fetchTournaments = async () => {
+  const response = await fetch(`${BASE_URL}/tournaments`);
+  if (!response.ok) throw new Error('Failed to fetch tournaments');
+  return response.json();
+};
