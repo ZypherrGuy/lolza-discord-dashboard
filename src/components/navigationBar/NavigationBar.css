@@ -12,26 +12,17 @@
   transition: all 0.3s ease;
 }
 
+
 /* Logo Styling */
 .logo-container {
   text-align: center;
-  margin-bottom: 70px; 
+  margin-bottom: 70px;
 }
 
 .logo {
-  width: 180px;  /* Adjust the width as needed */
+  width: 180px;
   height: auto;
   margin-top: 20px;
-}
-
-/* Sidebar Title */
-.sidebar-title {
-  text-align: center;
-  margin-bottom: 30px; /* Adjusted for better spacing */
-  font-size: 22px; /* Reduced size for better balance */
-  color: #ecf0f1;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 /* Sidebar Menu */
@@ -42,7 +33,7 @@
 
 .sidebar ul li {
   margin: 20px 0;
-  font-size: 16px; /* Reduced font size */
+  font-size: 16px;
 }
 
 /* Sidebar Links */
@@ -50,9 +41,35 @@
   color: #ecf0f1;
   display: flex;
   align-items: center;
-  font-size: 16px; /* Reduced font size */
+  font-size: 16px;
   transition: all 0.3s ease;
   padding: 10px 0px 10px 25px;
+}
+
+.sidebar ul li a {
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 10px 0px 10px 25px;
+}
+
+.dropdown-toggle {
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 10px 0px 10px 25px;
+}
+
+.dropdown-toggle svg {
+  margin-right: 10px;
+}
+
+.dropdown-toggle span {
+  margin-right: 10px;
 }
 
 /* Add some space between the icon and text */
@@ -67,13 +84,54 @@
 }
 
 /* Active Link Styling */
-.sidebar ul li a.active {
-  background-color: #fe015c;
-  color: white;
-  padding-left: 40px;
-}
 
 /* Sidebar link icons styling */
 .sidebar ul li a svg {
-  font-size: 20px; /* Icon size */
+  font-size: 20px;
+}
+
+/* Dropdown Container Styling */
+.sidebar ul .dropdown-menu {
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+/* Show the dropdown menu when open */
+.sidebar ul li.open .dropdown-menu {
+  display: flex;
+}
+
+/* Submenu Links Styling */
+.sidebar ul .dropdown-menu li {
+  margin: 10px 0;
+}
+
+.sidebar ul .dropdown-menu li a {
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  padding: 8px 0 8px 45px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Submenu Hover and Active States */
+.sidebar ul .dropdown-menu li a:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Dropdown Toggle Icon Styling */
+.sidebar ul li a .dropdown-icon {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.sidebar ul li.open a .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.active {
+  background-color: #fe015c;
 }
