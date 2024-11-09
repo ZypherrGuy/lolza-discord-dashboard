@@ -1,0 +1,44 @@
+/* Container styles */
+.content-container {
+  margin: 20px;
+}
+
+/* Filter bar styles */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.filter-option {
+  background-color: #1a2239;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+  width: 100%;
+}
+
+.filter-right{
+  border-radius: 0 8px 8px 0;
+}
+
+.filter-left{
+  border-radius: 8px 0 0 8px ;
+}
+
+.filter-option.active {
+  background-color: #fe015c;
+  color: #fff;
+}
+
+.filter-option:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Table styles (adjust as needed) */
+.table-container {
+  margin-top: 20px;
+}

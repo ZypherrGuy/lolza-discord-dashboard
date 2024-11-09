@@ -7,6 +7,8 @@ import UsersPage from './pages/userspage/UsersPage';
 import DiscordBotsPage from './pages/discordbotspage/DiscordBotsPage';
 import TournamentsPage from './pages/tournamentspage/TournamentsPage';
 import ToolsPage from './pages/toolsPage/ToolsPage';
+import LeagueOfLegendsPage from './pages/communitiespage/leagueoflegendspage/LeagueOfLegendsPage';
+import RocketLeaguePage from './pages/communitiespage/rocketleague/RocketLeague';
 
 // Layout components
 import NavigationBar from './components/navigationBar/NavigationBar';
@@ -25,6 +27,8 @@ const App = () => {
             <Route path="/discord-bots" element={<DiscordBotsPage />} />
             <Route path="/tournaments" element={<TournamentsPage />} />
             <Route path="/tools" element={<ToolsPage />} />
+            <Route path="/communities/leagueoflegends" element={<LeagueOfLegendsPage />} />
+            <Route path="/communities/rocketleague" element={<RocketLeaguePage />} />
           </Routes>
         </div>
       </div>
