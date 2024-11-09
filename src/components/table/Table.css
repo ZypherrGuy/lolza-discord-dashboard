@@ -1,10 +1,12 @@
+/* General Container */
 .table-container {
   margin: 20px;
   padding: 10px;
-  border-radius: 8px;
   background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Search Input Ribbon */
 .table-ribbon {
   display: flex;
   justify-content: flex-start;
@@ -19,37 +21,58 @@
   width: 250px;
 }
 
+/* Table Styles */
 .table {
   width: 100%;
   border-collapse: collapse;
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
-th,
-td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
+/* Header Cells */
 th {
+  padding: 12px;
+  text-align: left;
   background-color: #f4f4f4;
+  border-bottom: 2px solid #ddd;
   cursor: pointer;
+  user-select: none;
 }
 
 th:hover {
   background-color: #e8e8e8;
 }
 
+/* Table Body Cells */
 td {
+  padding: 10px;
+  text-align: left;
   background-color: #fafafa;
+  border-bottom: 1px solid #ddd;
 }
 
 tr:nth-child(even) td {
   background-color: #f9f9f9;
 }
 
+/* No Data Placeholder */
 .no-data {
   text-align: center;
   color: #888;
   font-style: italic;
+  padding: 20px;
+}
+
+/* Hover effect on table rows */
+tbody tr:hover td {
+  background-color: #f1f1f1;
+}
+
+/* Border Radius Customization */
+.table-container,
+.table {
+  border-top-left-radius: var(--border-top-left-radius);
+  border-top-right-radius: var(--border-top-right-radius);
+  border-bottom-right-radius: var(--border-bottom-right-radius);
+  border-bottom-left-radius: var(--border-bottom-left-radius);
 }

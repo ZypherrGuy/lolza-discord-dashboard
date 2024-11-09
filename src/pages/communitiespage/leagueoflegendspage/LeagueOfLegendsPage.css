@@ -7,7 +7,9 @@
 .filter-bar {
   display: flex;
   justify-content: center;
-  margin: 0 20px;
+  margin: 0 20px -20px 20px;
+  border-bottom: 5px #fe015c solid;
+
 }
 
 .filter-option {
@@ -21,11 +23,11 @@
 }
 
 .filter-right{
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 8px 0 0;
 }
 
 .filter-left{
-  border-radius: 8px 0 0 8px ;
+  border-radius: 8px 0 0 0 ;
 }
 
 .filter-option.active {

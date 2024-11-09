@@ -44,11 +44,11 @@ const LeagueOfLegendsPage = () => {
       {loading || teamsLoading ? (
         <Loader message="Loading..." />
       ) : (
-        <div className="table-container">
+        <div>
           {selectedFilter === 'players' ? (
-            <Table columns={columns} data={data} />
+            <Table columns={columns} data={data} borderRadius={{ topLeft: 0, topRight: 0, bottomRight: 8, bottomLeft: 8 }}/>
           ) : (
-            <Table columns={teamColumns} data={teamData} />
+            <Table columns={teamColumns} data={teamData} borderRadius={{ topLeft: 0, topRight: 0, bottomRight: 8, bottomLeft: 8 }}/>
           )}
         </div>
       )}

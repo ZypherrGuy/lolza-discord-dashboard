@@ -6,14 +6,32 @@ interface Column {
   label: string;
 }
 
+interface BorderRadius {
+  topLeft?: number;
+  topRight?: number;
+  bottomRight?: number;
+  bottomLeft?: number;
+}
+
 interface TableProps {
   columns: Column[];
   data: Record<string, any>[];
+  borderRadius?: number | BorderRadius;
 }
 
-const Table: React.FC<TableProps> = ({ columns, data }) => {
+const Table: React.FC<TableProps> = ({ columns, data, borderRadius  }) => {
   const [sortConfig, setSortConfig] = useState<{ key: string; direction: 'asc' | 'desc' } | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
+
+   // Compute border radius style
+   const borderRadiusStyle = useMemo(() => {
+    if (typeof borderRadius === 'number') {
+      return `${borderRadius}px`;
+    } else if (borderRadius) {
+      return `${borderRadius.topLeft ?? 8}px ${borderRadius.topRight ?? 8}px ${borderRadius.bottomRight ?? 8}px ${borderRadius.bottomLeft ?? 8}px`;
+    }
+    return '0px';
+  }, [borderRadius]);
 
   // Memoize the sorted data and apply search filtering
   const filteredData = useMemo(() => {
@@ -46,7 +64,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
   };
 
   return (
-    <div className="table-container">
+    <div className="table-container" style={{ borderRadius: borderRadiusStyle }}>
       <div className="table-ribbon">
         <input
           type="text"
