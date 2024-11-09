@@ -6,7 +6,6 @@ import logo from '../../assets/logo/LOGO-DISCDASH-TITLE-WHITE-FULL.png';
 import {
   FaUsers,
   FaRobot,
-  FaCogs,
   FaHome,
   FaChevronDown,
   FaChevronUp,
