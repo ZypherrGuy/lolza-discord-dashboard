@@ -53,6 +53,7 @@ const TournamentsPage = () => {
               key={tournament.id}
               logo={DefaultLogo}
               name={tournament.title}
+              participants={tournament.participants}
               onClick={() => openModal(tournament)}
             />
           ))}

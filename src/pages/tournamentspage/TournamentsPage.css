@@ -68,6 +68,7 @@
 
 .modal-info svg {
   margin-right: 10px; /* Adjust the spacing between the icon and text */
+  vertical-align: text-top; 
 }
 
 .date-span{
