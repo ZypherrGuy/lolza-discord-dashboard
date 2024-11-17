@@ -5,7 +5,14 @@ export interface Tournament {
   id: number;
   title: string;
   logo: string;
-  info: string;
+  description: string;
+  status: string;
+  participants: number;
+  prizePool: number;
+  registrationCloseDate: string;
+  registrationOpenDate: string;
+  tournamentEndDate: string;
+  tournamentStartDate:string;
 }
 
 export const useFetchTournaments = () => {

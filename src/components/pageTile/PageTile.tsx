@@ -4,7 +4,6 @@ import './PageTile.css';
 interface TournamentTileProps {
   logo: string;
   name: string;
-  info: string; 
   onClick: () => void;
 }
 

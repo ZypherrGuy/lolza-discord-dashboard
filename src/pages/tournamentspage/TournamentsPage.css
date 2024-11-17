@@ -1,30 +1,178 @@
+/* Base Styles */
 .content-container {
   margin: 20px;
 }
 
+/* Modal Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7); 
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000; 
+  padding: 20px;
 }
 
+/* Modal Content */
 .overlay-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 400px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
   width: 100%;
-  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  text-align: left;
+}
+
+.tournament-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  overflow-y: auto;
+  text-align: left;
 }
 
 .overlay-logo {
-  width: 100%;
-  max-width: 150px;
+  display: block;
+  margin: 0 auto;  /* Center the logo */
+  max-width: 180px;
   margin-bottom: 20px;
+  border-radius: 8px; /* Rounded corners for the logo */
+}
+
+/* Title */
+.overlay-heading {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Modal Information */
+.modal-info {
+  font-size: 1.1rem;
+  margin: 8px 12px;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.modal-info svg {
+  margin-right: 10px; /* Adjust the spacing between the icon and text */
+}
+
+.date-span{
+  font-size: 0.8rem;
+}
+
+.modal-info strong {
+  color: #222;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-container button {
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #c5044b; /* Hover effect */
+  color: white;
+}
+
+.close-button {
+  background-color: #ccc;
+}
+
+.confirm-button {
+  background-color: #fe015c;
+  color: white;
+}
+
+.modal-info span {
+  color: #777; /* Lighter color for values */
+}
+
+.status-coming-soon {
+  background-color: #acd2fc; 
+  color: #0f4780; 
+}
+
+.tournament-modal-info {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 20px;
+}
+
+.tournament-modal-info p {
+  color: #777;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 30px;
+}
+
+.status-tag {
+  display: inline-block;
+  padding: 2px 10px 2px 10px ; 
+  border-radius: 20px; 
+  font-size: 0.7rem; 
+  border: solid 1px #205386;
+  font-weight: 500; 
+  text-align: center;
+  color: #205386; 
+  background-color: #b5d5fa; 
+}
+
+.modal-dates {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-dates .date-column {
+  width: 50%;  /* Split the space into two equal columns */
+  display: flex;  /* Enable flexbox for alignment */
+  flex-direction: column;  /* Align children vertically */
+  justify-content: center;  /* Center content vertically */
+  align-items: center;  /* Center content horizontally */
+  text-align: center;  /* Center text horizontally */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .overlay-content {
+    padding: 20px;
+  }
+
+  .overlay-logo {
+    max-width: 120px;
+  }
+
+  .overlay-heading {
+    font-size: 1.5rem;
+  }
+
+  .modal-info {
+    font-size: 1rem;
+  }
 }
