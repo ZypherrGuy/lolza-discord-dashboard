@@ -3,7 +3,7 @@ import { useFetchPlayers } from '../../../hooks/useFetchPlayers';
 import { useFetchTeams } from '../../../hooks/useFetchTeams';
 import Table from '../../../components/table/Table';
 import Loader from '../../../components/loader/Loader';
-import './leagueoflegendsPage.css'; // Import the CSS for styling
+import './LeagueOfLegendsPage.css';
 
 const LeagueOfLegendsPage = () => {
   const [selectedFilter, setSelectedFilter] = useState<'players' | 'teams'>('players');
